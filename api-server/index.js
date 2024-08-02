@@ -9,16 +9,16 @@ app.use(bodyParser.json());
     This is for demo purposes only in order to simulate a functioning API serverr.
 */
 const users = {
-  "jim@joesrobotshop.com": {
-    firstName: "Jim",
-    lastName: "Cooper",
-    email: "jim@joesrobotshop.com",
+  "esakkirajabtech@gmail.com": {
+    firstName: "Esakki",
+    lastName: "Raja",
+    email: "esakkirajabtech@gmail.com",
     password: "very-secret",
   },
-  "joe@joesrobotshop.com": {
-    firstName: "Joe",
-    lastName: "Eames",
-    email: "joe@joesrobotshop.com",
+  "esakkirajabtech@gmail.com": {
+    firstName: "Esakki",
+    lastName: "Raja",
+    email: "esakkirajabtech@gmail.com",
     password: "super-secret",
   },
 };

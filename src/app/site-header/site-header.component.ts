@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
+import { IUser } from '_course-resources/user/user.model';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'bot-site-header',
@@ -6,7 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./site-header.component.css']
 })
 export class SiteHeaderComponent {
+  user:IUser | null = null;
+ showSignOutMenu: Boolean = false;
 
-  constructor() { }
+  constructor(private userSvc: UserService) { }
 
+  ngOnInit() {
+    this.userSvc.getUser().subscribe({
+      next: (user) => { this.user = user }
+    })
+  }
+
+  toggleSignOutMenu(){
+    this.showSignOutMenu = !this.showSignOutMenu;
+  }
+  
+  signOut() {
+    this.userSvc.signOut();
+    this.showSignOutMenu = false;
+  }
 }
